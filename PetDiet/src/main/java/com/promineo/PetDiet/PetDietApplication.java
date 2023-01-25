@@ -3,7 +3,7 @@ package com.promineo.PetDiet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.promineotech.ComponentScanMarker;
+import com.promineo.ComponentScanMarker;
 
 
 //Swagger URL
