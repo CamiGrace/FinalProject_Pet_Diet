@@ -94,7 +94,8 @@ public class DefaultOwnerDao implements OwnerDao {
 		    		.phoneNo(phoneNo)
 		    		.build());
 		        }
-
+// Put or Update method
+	//Having issues with sql syntax 
 	@Override
 	public Optional<Owner> updateOwnerInformation(Long ownerId, String address, String phoneNo) {
 		log.info("DAO: ownerId={}, address={}, phoneNo={}", ownerId, address, phoneNo);
