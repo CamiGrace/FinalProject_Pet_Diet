@@ -22,7 +22,7 @@ public class DefaultOwnerService implements OwnerService {
 	@Autowired
 	private OwnerDao ownerDao;
 	
-	//GET method (READ)
+	//GET (READ) method to pull all owner information using unique owner ID
 	@Transactional
 	@Override
 	public List<Owner> fetchOwnerInfo(Long ownerId) {

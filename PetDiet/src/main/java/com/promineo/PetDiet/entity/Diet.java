@@ -1,5 +1,7 @@
 package com.promineo.PetDiet.entity;
 
+
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +15,7 @@ public class Diet {
 
 	private Long dietId;
 	private String dietName;
-	private Long ownerId;
+	private String prepTime;
 	
 	
 	// Not sure how to add the time variable in here

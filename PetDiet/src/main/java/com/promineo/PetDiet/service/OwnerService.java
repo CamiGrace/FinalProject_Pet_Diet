@@ -7,7 +7,7 @@ import com.promineo.PetDiet.entity.Owner;
 public interface OwnerService {
 
 	
-	//GET method (READ)
+	//GET (READ) method to pull all owner information using unique owner ID
 	List<Owner> fetchOwnerInfo(Long ownerId);
 
 }
