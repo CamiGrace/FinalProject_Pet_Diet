@@ -1,6 +1,7 @@
 package com.promineo.PetDiet.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,13 @@ public class DefaultIngredientService implements IngredientService {
 	
 		return ingredients;
 	
+	}
+	//POST method: create new ingredient given dietId, ingredient name and the amount required 
+	@Override
+	public Optional<Ingredient> createIngredient(Long dietId, String ingredientName, String amountRequired) {
+		log.info("New ingredient was created with dietId={}, ingredientName={}, amountRequired={}", dietId, ingredientName, amountRequired);
+		
+		return ingredientDao.createIngredient(dietId, ingredientName, amountRequired);
 	}
 
 }

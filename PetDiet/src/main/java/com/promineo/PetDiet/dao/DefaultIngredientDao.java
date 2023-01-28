@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
@@ -24,7 +25,7 @@ public class DefaultIngredientDao implements IngredientDao {
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
 	 
-	
+	//GET method: get all pertinent ingredients and information when provided diet ID
 	@Override
 	public List<Ingredient> fetchIngredientInfo(Long dietId) {
 		log.debug("DAO: dietId={}", dietId);
@@ -57,4 +58,36 @@ public class DefaultIngredientDao implements IngredientDao {
 					
 				});
 			}
-	}
+
+	//POST method: create new ingredient given dietId, ingredient name and the amount required 
+	@Override
+	public Optional<Ingredient> createIngredient(Long dietId, String ingredientName, String amountRequired) {
+		log.info("New ingredient was created with dietId={}, ingredientName={}, amountRequired={}", dietId, ingredientName, amountRequired);
+		//@formatter:off
+	    String sql = " "
+	        + " INSERT INTO ingredient ("
+	        + "diet_id, ingredient_name, amount_required "
+	        + " ) VALUES ( "
+	        +  ":diet_id, :ingredient_name, :amount_required)";
+	    
+	    //@formatter:on
+	    
+	    Map<String, Object> params = new HashMap<>();
+	    params.put("diet_id", dietId);
+	    params.put("ingredient_name", ingredientName);
+	    params.put("amount_required", amountRequired);
+	
+	    
+	    jdbcTemplate.update(sql, params);
+	    return Optional.ofNullable(
+	    		Ingredient.builder()
+	    		.dietId(dietId)
+	    		.ingredientName(ingredientName)
+	    		.amountRequired(amountRequired)
+	    		.build());
+	        }
+	
+	
+	
+	
+}

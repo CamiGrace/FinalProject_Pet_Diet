@@ -35,7 +35,7 @@ public class DefaultPetService implements PetService {
 	
 		return pets;
 	}
-
+	//POST (create): create new pet entry given ownerID, petName, species, breed, and age 
 	@Override
 	public Optional<Pet> createPet(Long ownerId, String petName, String species, String breed, Long age,
 			PetSize petSize, HairLength hairLength) {

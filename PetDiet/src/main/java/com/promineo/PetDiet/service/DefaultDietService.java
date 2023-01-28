@@ -1,12 +1,14 @@
 package com.promineo.PetDiet.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.promineo.PetDiet.dao.DietDao;
 import com.promineo.PetDiet.entity.Diet;
+
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,6 +28,13 @@ public class DefaultDietService implements DietService {
 		List<Diet> diets = dietDao.fetchDietInfo(dietId);		
 	
 		return diets;
+	}
+	//Post Method: create new diet given dietName and prepTime
+	@Override
+	public Optional<Diet> createDiet(String dietName, String prepTime) {
+			log.info("New diet was created with dietName={}, prepTime={}",
+				dietName, prepTime);
+		return dietDao.createDiet(dietName, prepTime);
 	}
 
 }
