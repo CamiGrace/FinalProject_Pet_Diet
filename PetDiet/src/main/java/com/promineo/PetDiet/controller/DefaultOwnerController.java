@@ -11,7 +11,8 @@ import com.promineo.PetDiet.service.OwnerService;
 
 import lombok.extern.slf4j.Slf4j;
 
-
+//Default Owner Controller takes information from the Owner Controller and then implements in.
+//Afterwards, it is then handed off to the Customer Service interface.
 
 
 @RestController

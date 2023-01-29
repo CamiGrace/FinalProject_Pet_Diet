@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 
-
+// Default owner service implenets owner service interface
 @Service
 @Slf4j
 public class DefaultOwnerService implements OwnerService {

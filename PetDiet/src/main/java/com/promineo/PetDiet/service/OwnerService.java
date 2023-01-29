@@ -6,7 +6,8 @@ import java.util.Optional;
 import com.promineo.PetDiet.entity.Owner;
 
 public interface OwnerService {
-
+	
+	//Owner Service Interface takes information from the Default Owner Controller 
 	
 	//GET (READ) method to pull all owner information using unique owner ID
 	List<Owner> fetchOwnerInfo(Long ownerId);

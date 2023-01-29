@@ -28,6 +28,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 
+
+// Controller interface sets up information and hands if off to the default controller class 
 @Validated
 	@RequestMapping("/owner")
 	@OpenAPIDefinition(info = @Info(title = "Owner Info Service"), servers = {
