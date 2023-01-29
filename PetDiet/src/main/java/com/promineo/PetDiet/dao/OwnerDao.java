@@ -15,7 +15,7 @@ public interface OwnerDao {
 	Optional<Owner> createOwner(String firstName, String lastName, String address, String phoneNo);
 	
 	// PUT (UPDATE) method: update customer information, given name, address, and Phone number 
-	Optional<Owner> updateOwnerInformation(Long ownerId, String address, String phoneNo);
+	Optional<Owner> updateOwnerInformation(Long ownerId, String firstName, String lastName, String address, String phoneNo);
 
 	//DELETE method: Delete owner from the system given unique owner ID
 	Optional<Owner> deleteOwner(Long ownerId);

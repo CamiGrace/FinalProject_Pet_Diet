@@ -186,6 +186,19 @@ public interface OwnerController {
 					    description = "The unique owner ID (i.e., '1')"), 
 					       
 				@Parameter(
+						name = "firstName", 
+						allowEmptyValue = false, 
+						required = false, 
+						description = "The first name of the owner(i.e., 'Olivia')"),
+				
+				@Parameter(
+						name = "lastName", 
+						allowEmptyValue = false, 
+						required = false, 
+						description = "The last name of the owner(i.e., 'Dickens')"),
+				
+				
+				@Parameter(
 						name = "address", 
 						allowEmptyValue = false, 
 						required = false, 
@@ -207,6 +220,10 @@ public interface OwnerController {
 	 Optional<Owner> updateOwnerInformation(
 			 @RequestParam(required = false)
 		      Long ownerId,
+		      @RequestParam(required = false)
+		      String firstName, 
+		      @RequestParam(required = false)
+		      String lastName, 
 		      @RequestParam(required = false)
 		      String address, 
 		      @RequestParam(required = false)

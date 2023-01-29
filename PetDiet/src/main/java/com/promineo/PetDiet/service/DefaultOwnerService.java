@@ -44,10 +44,10 @@ public class DefaultOwnerService implements OwnerService {
 
 	// PUT (UPDATE) method: update customer information, given name, address, and Phone number 
 	@Override
-	public Optional<Owner> updateOwnerInformation(Long ownerId, String address, String phoneNo) {
-		log.info("Owner informationw as updated with ownerId={}, address={}, phoneNo={}",
-				ownerId, address, phoneNo);
-		return ownerDao.updateOwnerInformation (ownerId, address, phoneNo);
+	public Optional<Owner> updateOwnerInformation(Long ownerId, String firstName, String lastName, String address, String phoneNo) {
+		log.info("Owner informationw as updated with ownerId={}, firstName={}, lastName={}, address={}, phoneNo={}",
+				ownerId, firstName, lastName, address, phoneNo);
+		return ownerDao.updateOwnerInformation (ownerId, firstName, lastName, address, phoneNo);
 	}
 
 	//DELETE method: Delete owner from the system given unique owner ID

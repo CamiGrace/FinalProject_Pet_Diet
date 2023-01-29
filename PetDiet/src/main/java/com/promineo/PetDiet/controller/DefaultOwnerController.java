@@ -39,9 +39,9 @@ public class DefaultOwnerController implements OwnerController {
 	// PUT (UPDATE) method: update customer's contact information, given ownerId, last name, and new address, and Phone number 
 
 	@Override
-	public Optional<Owner> updateOwnerInformation(Long ownerId, String address, String phoneNo) {
-		log.info("The updateOwnerInformation was called with ownerId={}, address={}, phoneNo={}", ownerId, address, phoneNo);
-		return ownerService.updateOwnerInformation(ownerId, address, phoneNo);
+	public Optional<Owner> updateOwnerInformation(Long ownerId, String firstName, String lastName, String address, String phoneNo) {
+		log.info("The updateOwnerInformation was called with ownerId={}, firstName={}, lastName={}, address={}, phoneNo={}", ownerId, firstName, lastName, address, phoneNo);
+		return ownerService.updateOwnerInformation(ownerId, firstName, lastName, address, phoneNo);
 	}
 	
 	

@@ -97,12 +97,14 @@ public class DefaultOwnerDao implements OwnerDao {
 	// Put or Update method
 	 
 	@Override
-	public Optional<Owner> updateOwnerInformation(Long ownerId, String address, String phoneNo) {
-		log.info("DAO: ownerId={}, address={}, phoneNo={}", ownerId, address, phoneNo);
+	public Optional<Owner> updateOwnerInformation(Long ownerId, String firstName, String lastName, String address, String phoneNo) {
+		log.info("DAO: ownerId={}, firstName={}, lastName={}, address={}, phoneNo={}", ownerId, firstName, lastName, address, phoneNo);
 		
 		//@formatter:off
 		  String sql = ""
 				  + "UPDATE owner SET address = :address, "
+			      + "first_name = :first_name, "
+			      + "last_name = :last_name, "
 			      + "phone_no = :phone_no "
 			      + "WHERE owner_id = :owner_id";
 		  
@@ -111,6 +113,8 @@ public class DefaultOwnerDao implements OwnerDao {
 		  
 		  Map<String, Object> params = new HashMap<>();
 		  params.put("owner_id", ownerId);
+		  params.put("first_name", firstName);
+		  params.put("last_name", lastName);
 		  params.put("address", address);
 		  params.put("phone_no", phoneNo);
 		
